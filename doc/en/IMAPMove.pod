@@ -1,0 +1,17 @@
+=head1 NAME
+
+IMAPMove
+
+=head1 DESCRIPTION
+
+Copy mails that are imported into OTRS into an other folder.
+
+=head1 REPOSITORY & BUGS
+
+The code for this addon and a bugtracker can be found at L<https://github.com/reneeb/otrs-IMAPMove>.
+
+=head1 AUTHOR
+
+This module is licensed under the terms of AGPL 3.0.
+
+Author: Renee Baecker, Perl-Services.de, C<< <otrs@perl-services.de> >>

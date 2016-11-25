@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_config version="1.0" init="Config">
+    <ConfigItem Name="IMAPMove::CopyTo" Required="0" Valid="0">
+        <Description Translatable="1">Define folder where the mails should be copied to.</Description>
+        <Group>Framework</Group>
+        <SubGroup>Core::MailAccount</SubGroup>
+        <Setting>
+            <String Regex="">INBOX.copy</String>
+        </Setting>
+    </ConfigItem>
+</otrs_config>
