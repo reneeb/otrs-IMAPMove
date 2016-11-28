@@ -214,13 +214,22 @@ sub _Fetch {
 # ---
 # PS
 # ---
-                    my $DoCopy      = $ConfigObject->Get('IMAPMove::CopyTo');
-                    my $CopySuccess = 1;
+                    my $DoCopy       = $ConfigObject->Get('IMAPMove::CopyTo');
+                    my $CopySuccess  = 1;
+                    my $CopyErrorMSG = '';
                     if ( $DoCopy ) {
-                        $CopySuccess = $IMAPObject->copy( $Messageno, $DoCopy );
+                        $IMAPObject->copy( $Messageno, $DoCopy ) or do {
+                            $CopySuccess  = 0;
+                            $CopyErrorMSG = $@;
+                        };
                     }
 
                     if ( !$CopySuccess ) {
+                        $Kernel::OM->Get('Kernel::System::Log')->Log(
+                            Priority => 'error',
+                            Message  => "Can't copy message to $DoCopy: $CopyErrorMSG",
+                        );
+
                         next MESSAGE_NO;
                     }
 # ---
