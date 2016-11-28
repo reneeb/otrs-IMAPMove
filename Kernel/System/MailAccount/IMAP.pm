@@ -220,7 +220,7 @@ sub _Fetch {
                     if ( $DoCopy ) {
                         $IMAPObject->copy( $Messageno, $DoCopy ) or do {
                             $CopySuccess  = 0;
-                            $CopyErrorMSG = $@;
+                            $CopyErrorMSG = $IMAPObject->errstr;
                         };
                     }
 
