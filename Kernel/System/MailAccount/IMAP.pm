@@ -211,6 +211,20 @@ sub _Fetch {
                     );
                 }
                 else {
+# ---
+# PS
+# ---
+                    my $DoCopy      = $ConfigObject->Get('IMAPMove::CopyTo');
+                    my $CopySuccess = 1;
+                    if ( $DoCopy ) {
+                        $CopySuccess = $IMAPObject->copy( $Messageno, $DoCopy );
+                    }
+
+                    if ( !$CopySuccess ) {
+                        next MESSAGE_NO;
+                    }
+# ---
+
                     my $PostMasterObject = Kernel::System::PostMaster->new(
                         %{$Self},
                         Email   => \@Lines,
@@ -232,12 +246,11 @@ sub _Fetch {
 # ---
 # PS
 # ---
-                    my $DoCopy = $ConfigObject->Get('IMAPMove::CopyTo');
-                    if ( $DoCopy ) {
-                        $IMAPObject->copy( $Messageno, $DoCopy );
+#                    $IMAPObject->delete($Messageno);
+                    if ( $CopySuccess ) {
+                        $IMAPObject->delete($Messageno);
                     }
 # ---
-                    $IMAPObject->delete($Messageno);
                     undef $PostMasterObject;
 
                 }
