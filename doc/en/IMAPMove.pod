@@ -10,7 +10,7 @@ Copy mails that are imported into OTRS into an other folder.
 
 The code for this addon and a bugtracker can be found at L<https://github.com/reneeb/otrs-IMAPMove>.
 
-=head1 AUTHOR
+=head1 AUTHOR AND LICENSE
 
 This module is licensed under the terms of AGPL 3.0.
 
