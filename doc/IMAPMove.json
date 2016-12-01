@@ -1,6 +1,6 @@
 {
     "name": "IMAPMove",
-    "version": "5.0.4",
+    "version": "5.0.5",
     "framework": [
         "5.0.x"
     ],
@@ -10,7 +10,8 @@
     },
     "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007",
     "description" : {
-        "en": "Copy mails that are imported into OTRS into an other folder",
-        "de": "Kopiert Mails, die in OTRS importiert in einen anderen Ordner"
+        "en": "Copy mails that are imported into OTRS into an other folder.",
+        "de": "Kopiert Mails, die in OTRS importiert in einen anderen Ordner.",
+        "hu": "Az OTRS-be importált levelek átmásolása egy másik mappába."
     }
 }
